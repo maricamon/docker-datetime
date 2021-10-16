@@ -24,3 +24,13 @@ To access container, run in another terminal
 curl -X GET -H "Content-Type: application/json" -d '{"timezone":"Asia/Manila"}' http://172.17.0.5:5000/
 ```
 > Sample output: `{"datetime":"2021-10-14 16:07:22"}`
+
+Alternatively, to access container from outside the instance / from a different device, use **port forwarding** / **ssh tunneling**
+```
+ssh -L 8080:172.17.0.5:5000 ubuntu@<Public IP of container instance>
+curl -X GET -H "Content-Type: application/json" -d '{"timezone":"Asia/Manila"}' http://127.0.0.1:8080/
+```
+> Sample output: `{"datetime":"2021-10-14 16:07:22"}` \
+  Note the format of local port forwarding \
+  `ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER` \
+  If `LOCAL_IP` is not defined, ssh client binds on the localhost `127.0.0.1`
