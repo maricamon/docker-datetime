@@ -16,8 +16,8 @@ cd docker-datetime
 docker build -t flask-datetime:v1 .
 docker run flask-datetime:v1
 ```
-> Take note of the url which will be used to access container \
-  Sample output: `Running on http://172.17.0.5:5000/`
+> Sample output: `Running on http://172.17.0.5:5000/` \
+  Take note of the url which will be used to access container 
 
 To access container, run in another terminal
 ```
