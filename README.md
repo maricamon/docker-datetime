@@ -21,6 +21,6 @@ docker run flask-datetime:v1
 
 To access container, run in another terminal
 ```
-curl -X GET -H "Content-Type: application/json" -d '{"timezone":"Asia/Manila"}' http://127.0.0.1:5000/
+curl -X GET -H "Content-Type: application/json" -d '{"timezone":"Asia/Manila"}' http://172.17.0.5:5000/
 ```
 > Sample output: `{"datetime":"2021-10-14 16:07:22"}`
