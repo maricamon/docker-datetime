@@ -25,7 +25,8 @@ curl -X GET -H "Content-Type: application/json" -d '{"timezone":"Asia/Manila"}' 
 ```
 > Sample output: `{"datetime":"2021-10-14 16:07:22"}`
 
-Alternatively, to access container from outside the instance / from a different device, use **port forwarding** / **ssh tunneling**
+Alternatively, to access container from outside the instance / from a different device, use **port forwarding** / **ssh tunneling**. 
+Run commands in separate terminals 
 ```
 ssh -L 8080:172.17.0.5:5000 ubuntu@<Public IP of container instance>
 curl -X GET -H "Content-Type: application/json" -d '{"timezone":"Asia/Manila"}' http://127.0.0.1:8080/
